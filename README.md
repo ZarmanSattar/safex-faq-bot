@@ -138,6 +138,6 @@ See [`SafeX_Case_Study.docx`](./SafeX_Case_Study.docx) for the complete write-up
 
 <div align="center">
 
-**Author:** Zarman Sattar (FA23-BAI-053) · BS Artificial Intelligence · COMSATS University Islamabad
+**Author:** Zarman Sattar · BS Artificial Intelligence · COMSATS University Islamabad
 
 </div>
