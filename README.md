@@ -10,7 +10,11 @@
 ![Status](https://img.shields.io/badge/status-prototype-yellow)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
-[Overview](#overview) • [Features](#features) • [Architecture](#architecture) • [Setup](#setup) • [Guardrails](#guardrails) • [Case study](#case-study)
+[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://safex-faq-bot.vercel.app/)
+
+**Live demo:** [https://safex-faq-bot.vercel.app/](https://safex-faq-bot.vercel.app/)
+
+[Overview](#overview) • [Features](#features) • [Architecture](#architecture) • [Setup](#setup) • [Deployment](#deployment) • [Guardrails](#guardrails) • [Case study](#case-study)
 
 </div>
 
@@ -74,6 +78,8 @@ GROQ_API_KEY=your_groq_api_key_here
 
 PORT=3000
 
+> For the deployed version, `GROQ_API_KEY` must be set as an environment variable in the Vercel dashboard (Project Settings → Environment Variables) — this is separate from the local `.env` file, which is gitignored and not uploaded.
+
 ## Run
 
 ```bash
@@ -82,12 +88,18 @@ node server.js
 
 Then open `http://localhost:3000` in a browser.
 
-> Runs locally only — not yet deployed to a public host.
+> Also live at [https://safex-faq-bot.vercel.app/](https://safex-faq-bot.vercel.app/).
+
+## Deployment
+
+The app is deployed on [Vercel](https://vercel.com) as a serverless function. To fit Vercel's model, the Express app was restructured to export itself (`module.exports = app`) rather than calling `app.listen()` directly, so the same `server.js` runs both locally and as a serverless handler. A `vercel.json` config routes `/api/*` requests to the Express function and everything else to the static files in `public/`. Full context is in the case study.
 
 ## Project structure
 safex-faq-bot/
 
 ├── server.js              Express server, /api/ask route, retrieval logic
+
+├── vercel.json            Vercel serverless build + routing config
 
 ├── package.json
 
