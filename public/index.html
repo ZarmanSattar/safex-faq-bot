@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SafeX Solutions - Ask Us Anything</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="topbar">CONTACT@SAFEXSOLUTIONS.COM</div>
+
+  <header class="navbar">
+    <div class="logo-block">
+      <svg class="logo-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M24 4L42 13V26C42 35 34.5 41.5 24 44C13.5 41.5 6 35 6 26V13L24 4Z" fill="#1954b8"/>
+        <path d="M17 24L22 29L32 18" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="logo-text">
+        <span class="logo-safex">SAFEX</span>
+        <span class="logo-solutions">SOLUTIONS</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="header-block">
+      <h1>Ask us anything about SafeX</h1>
+      <p>This assistant answers using SafeX Solutions' real website content - Services, Mission, and Contact info. It will not guess beyond what is published on the site.</p>
+    </div>
+
+    <div class="chat-shell">
+      <div class="messages" id="messages"></div>
+
+      <div class="suggestions" id="suggestions">
+        <button class="chip" data-q="What services does SafeX offer?">What services do you offer?</button>
+        <button class="chip" data-q="How can I contact SafeX?">How can I contact you?</button>
+        <button class="chip" data-q="What is SafeX's mission?">What is your mission?</button>
+        <button class="chip" data-q="Do you offer internships?">Do you offer internships?</button>
+      </div>
+
+      <div class="input-row">
+        <input type="text" id="userInput" placeholder="Ask about services, AI development, cybersecurity..." />
+        <button id="sendBtn">Ask</button>
+      </div>
+    </div>
+
+    <p class="footer-note">Prototype built on real SafeX Solutions site content (safexsolutions.com) via a local Node.js + Groq backend.</p>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
