@@ -1,6 +1,20 @@
+<div align="center">
+
 # SafeX Solutions — AI FAQ Assistant
 
-A retrieval-grounded chatbot that answers only from what SafeX actually publishes — never invented.
+**A retrieval-grounded chatbot that answers only from what SafeX actually publishes — never invented.**
+
+![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?logo=node.js&logoColor=white)
+![Express](https://img.shields.io/badge/Express-4.x-000000?logo=express&logoColor=white)
+![Groq](https://img.shields.io/badge/LLM-Groq%20LLaMA%203.3%2070B-F55036)
+![Status](https://img.shields.io/badge/status-prototype-yellow)
+![License](https://img.shields.io/badge/license-MIT-blue)
+
+[Overview](#overview) • [Features](#features) • [Architecture](#architecture) • [Setup](#setup) • [Guardrails](#guardrails) • [Case study](#case-study)
+
+</div>
+
+---
 
 ## Overview
 
@@ -16,11 +30,11 @@ Built as an internship AI/ML prototype task. Full write-up, architecture diagram
 
 | Feature | Description |
 |---|---|
-| Retrieval-augmented generation | Keyword-overlap retrieval selects relevant context before generation — no hallucinated answers |
-| Groq / LLaMA 3.3 70B | Fast, low-temperature generation tuned for factual consistency |
-| Honest fallback | Declines and redirects to `contact@safexsolutions.com` when a question falls outside its knowledge base |
-| On-brand UI | White/blue interface matching SafeX's actual site design |
-| Source transparency | Every answer is tagged with the knowledge topics it was grounded in |
+| 🔍 Retrieval-augmented generation | Keyword-overlap retrieval selects relevant context before generation — no hallucinated answers |
+| 🧠 Groq / LLaMA 3.3 70B | Fast, low-temperature generation tuned for factual consistency |
+| 🛡️ Honest fallback | Declines and redirects to `contact@safexsolutions.com` when a question falls outside its knowledge base |
+| 🎨 On-brand UI | White/blue interface matching SafeX's actual site design |
+| 🔗 Source transparency | Every answer is tagged with the knowledge topics it was grounded in |
 
 ## Architecture
 
@@ -48,15 +62,6 @@ flowchart TD
 5. Those chunks are inserted into a system prompt instructing the model to answer **only** from that context.
 6. Groq (LLaMA 3.3 70B) generates the answer at low temperature (0.3) for factual consistency.
 7. The answer and its source topics are returned and rendered with a `Grounded in: ...` tag.
-
-## Guardrails
-
-The assistant treats its knowledge base as a hard boundary, not a starting point for improvisation. Verified against two live tests:
-
-- **In-domain edge case** — "What are your prices?" → correctly declines to invent a figure, redirects to `contact@safexsolutions.com`
-- **Out-of-domain question** — "What's the capital of France?" → recognizes the question is unrelated to SafeX entirely and redirects, rather than force-fitting an answer
-
-Screenshots and full analysis in the case study.
 
 ## Setup
 
@@ -104,10 +109,23 @@ safex-faq-bot/
 
 └── SafeX_Case_Study.docx  Full write-up: approach, architecture, results, limitations
 
+## Guardrails
+
+The assistant treats its knowledge base as a hard boundary, not a starting point for improvisation. Verified against two live tests:
+
+- **In-domain edge case** — "What are your prices?" → correctly declines to invent a figure, redirects to `contact@safexsolutions.com`
+- **Out-of-domain question** — "What's the capital of France?" → recognizes the question is unrelated to SafeX entirely and redirects, rather than force-fitting an answer
+
+Screenshots and full analysis in the case study.
+
 ## Case study
 
 See [`SafeX_Case_Study.docx`](./SafeX_Case_Study.docx) for the complete write-up: problem framing, approach, architecture, retrieval validation, live guardrail tests with screenshots, limitations, and next steps.
 
-## Author
+---
 
-Zarman Sattar (FA23-BAI-053) · BS Artificial Intelligence · COMSATS University Islamabad
+<div align="center">
+
+**Author:** Zarman Sattar (FA23-BAI-053) · BS Artificial Intelligence · COMSATS University Islamabad
+
+</div>
